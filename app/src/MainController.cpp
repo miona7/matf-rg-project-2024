@@ -20,4 +20,8 @@ namespace app {
         return true;
     }
 
+    void MainController::draw() {
+        // TODO
+    }
+
 } // namespace app
