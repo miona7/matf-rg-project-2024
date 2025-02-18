@@ -11,7 +11,6 @@ if (NOT COMPILER_SUPPORTS_CXX23)
     message(FATAL_ERROR "The compiler does not support C++23.")
 endif()
 
-
 ############## ENGINE  ###############
 add_subdirectory(engine EXCLUDE_FROM_ALL)
 

@@ -1,6 +1,6 @@
 # {NAME-OF-THE-PROJECT}
 
-{INDEX} - {STUDENT-FULL-NAME}  
+{mi22133} - {Miona Sretenovic}  
 {PROJECT DESCRIPTION}
 
 ## Controls
