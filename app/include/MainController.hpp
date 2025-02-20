@@ -14,6 +14,8 @@ namespace app  {
 
         bool loop() override;
 
+        void drawCube();
+
         void draw() override;
 
         public:

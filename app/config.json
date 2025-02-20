@@ -1,6 +1,9 @@
 {
   "resources": {
     "models": {
+        "cube": {
+          "path": "cube/cube.obj"
+      }
     }
   },
   "window": {

@@ -20,8 +20,15 @@ namespace app {
         return true;
     }
 
+    void MainController::drawCube() {
+        auto resources = engine::core::Controller::get<engine::resources::ResourcesController>();
+        engine::resources::Model* model = resources->model("cube");
+        engine::resources::Shader* shader = resources->shader("basic");
+        model->draw(shader);
+    }
+
     void MainController::draw() {
-        // TODO
+        drawCube();
     }
 
 } // namespace app
