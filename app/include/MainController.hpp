@@ -14,7 +14,11 @@ namespace app  {
 
         bool loop() override;
 
-        void drawBackpack();
+	    void updateCamera();
+
+	    void update() override;
+
+        static void drawBackpack();
 
 	    void begin_draw() override;
 
