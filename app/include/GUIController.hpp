@@ -11,6 +11,8 @@ namespace app {
 
         void initialize() override;
 
+        void poll_events() override;
+
         void draw() override;
 
     public:
