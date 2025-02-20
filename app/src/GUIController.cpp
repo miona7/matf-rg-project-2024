@@ -4,7 +4,6 @@
 #include <engine/graphics/GraphicsController.hpp>
 #include <engine/platform/PlatformController.hpp>
 #include <GUIController.hpp>
-
 #include <imgui.h>
 
 namespace app {
@@ -22,8 +21,11 @@ namespace app {
 
     void GUIController::draw() {
         auto graphics = engine::core::Controller::get<engine::graphics::GraphicsController>();
+        auto camera = graphics->camera();
+
         graphics->begin_gui();
         ImGui::Begin("Camera info");
+        ImGui::Text("Camera position: (%.2f, %.2f, %.2f)", camera->Position.x, camera->Position.y, camera->Position.z);
         ImGui::End();
         graphics->end_gui();
     }

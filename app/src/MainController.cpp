@@ -6,6 +6,7 @@
 #include <engine/graphics/GraphicsController.hpp>
 #include "../include/MainController.hpp"
 #include <spdlog/spdlog.h>
+#include "GUIController.hpp"
 
 namespace app {
 
@@ -14,8 +15,11 @@ namespace app {
     };
 
     void MainPlatformEventObserver::on_mouse_move(engine::platform::MousePosition position) {
-        auto camera = engine::core::Controller::get<engine::graphics::GraphicsController>()->camera();
-        camera->rotate_camera(position.dx, position.dy);
+        auto guiController = engine::core::Controller::get<GUIController>();
+        if (!guiController->is_enabled()) {
+            auto camera = engine::core::Controller::get<engine::graphics::GraphicsController>()->camera();
+            camera->rotate_camera(position.dx, position.dy);
+        }
     }
 
     void MainController::initialize() {
@@ -34,6 +38,10 @@ namespace app {
     }
 
     void MainController::updateCamera() {
+        auto guiController = engine::core::Controller::get<GUIController>();
+        if (guiController->is_enabled()) {
+            return;
+        }
         auto platform = engine::core::Controller::get<engine::platform::PlatformController>();
         auto graphics = engine::core::Controller::get<engine::graphics::GraphicsController>();
         auto camera = graphics->camera();
@@ -51,6 +59,7 @@ namespace app {
         if (platform->key(engine::platform::KeyId::KEY_D).is_down()) {
             camera->move_camera(engine::graphics::Camera::Movement::RIGHT, dt);
         }
+
     }
 
     void MainController::update() {
