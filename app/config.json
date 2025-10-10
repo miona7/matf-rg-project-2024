@@ -1,11 +1,34 @@
 {
   "resources": {
     "models": {
+        "backpack": {
+          "path": "backpack/backpack.obj"
+      },
+      "car": {
+        "path": "car/Lamborghini_Aventador.obj",
+        "flip_uvs": true
+      },
+      "farmHouse": {
+        "path": "farmHouse/FarmHouse.obj",
+        "flip_uvs": true
+      },
+      "bird": {
+        "path": "bird/Hummingbird.obj",
+        "flip_uvs": true
+      },
+      "dog": {
+        "path": "Beagle/Mesh_Beagle.obj",
+        "flip_uvs": true
+      },
+      "cat": {
+        "path": "Kitten/Mesh_Kitten.obj",
+        "flip_uvs": true
+      }
     }
   },
   "window": {
     "height": 600,
-    "title": "Hello, window!",
+    "title": "Hello from farmstead!",
     "width": 800
   }
 }

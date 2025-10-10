@@ -87,8 +87,8 @@ namespace engine::graphics {
         static int32_t texture_format(int32_t number_of_channels);
 
         /**
-        * @brief Initializes the cube Vertex Array Object used for skybox drawing. Caches the vao result.
-        * @returns VAO of the cube used for skybox drawing.
+        * @brief Initializes the cube Vertex Array Object used for m_skybox drawing. Caches the vao result.
+        * @returns VAO of the cube used for m_skybox drawing.
         */
         static uint32_t init_skybox_cube();
 
@@ -108,7 +108,7 @@ namespace engine::graphics {
                                        resources::ShaderType shader_type);
 
         /**
-        * @brief Loads the skybox textures from the `path`.
+        * @brief Loads the m_skybox textures from the `path`.
         * Make sure that images are named: front.jpg, back.jpg, up.jpg, down.jpg, left.jpg, down.jpg.
         * They can be of the other extension as well, but the function will assign each texture to the appropriate
         * side of the cubemap based on the texture file name.

@@ -150,7 +150,7 @@ namespace engine::graphics {
                                 data);
             } else {
                 throw util::EngineError(util::EngineError::Type::AssetLoadingError,
-                                        std::format("Failed to load skybox texture {}", path.string()));
+                                        std::format("Failed to load m_skybox texture {}", path.string()));
             }
         }
         CHECKED_GL_CALL(glTexParameteri, GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);

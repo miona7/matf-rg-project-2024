@@ -68,8 +68,8 @@ namespace engine::test::app {
     }
 
     void MainController::draw_skybox() {
-        auto shader      = engine::core::Controller::get<engine::resources::ResourcesController>()->shader("skybox");
-        auto skybox_cube = engine::core::Controller::get<engine::resources::ResourcesController>()->skybox("skybox");
+        auto shader      = engine::core::Controller::get<engine::resources::ResourcesController>()->shader("m_skybox");
+        auto skybox_cube = engine::core::Controller::get<engine::resources::ResourcesController>()->skybox("m_skybox");
         engine::core::Controller::get<engine::graphics::GraphicsController>()->draw_skybox(shader, skybox_cube);
     }
 
