@@ -4,27 +4,11 @@
 
 #include <engine/core/Engine.hpp>
 #include <engine/graphics/GraphicsController.hpp>
-#include "../include/MainController.hpp"
+#include "MainController.hpp"
 #include <spdlog/spdlog.h>
 #include "GUIController.hpp"
 
 namespace app {
-
-    Light pointLight;
-    Light dirLight;
-    std::vector<Event> events;
-
-    glm::vec3 birdPosition = glm::vec3(0.0f, 2.0f, -4.0f);
-    float birdRadius = 2.0f;
-    float birdSpeed = 1.0f;
-    float birdAngle = 0.0f;
-    float birdHeight = 2.0f;
-    bool birdFlying = false;
-
-    bool catVisible = false;
-    bool dogVisible = true;
-
-    bool cPressedLastFrame = false;
 
     class MainPlatformEventObserver : public engine::platform::PlatformEventObserver {
         void on_mouse_move(engine::platform::MousePosition position) override;
@@ -62,8 +46,20 @@ namespace app {
             true
         };
 
+        birdPosition = glm::vec3(0.0f, 2.0f, -4.0f);
+        birdRadius = 2.0f;
+        birdSpeed = 1.0f;
+        birdAngle = 0.0f;
+        birdHeight = 2.0f;
+        birdFlying = false;
+
+        catVisible = false;
+        dogVisible = true;
+
+        cPressedLastFrame = false;
+
         events.push_back({
-            []() {
+            [this]() {
                 spdlog::info("Bird started flying!");
                 birdFlying = true;
             },0.0f, false});
@@ -121,7 +117,7 @@ namespace app {
             catVisible = true;
             dogVisible = false;
             events.push_back({
-                []() {
+                [this]() {
                     spdlog::info("Dog appears again, cat disappears...");
                     dogVisible = true;
                     catVisible = false;

@@ -1,7 +1,7 @@
 //
 // Created by miona on 2/17/25.
 
-#include "../include/MyApp.hpp"
+#include "MyApp.hpp"
 #include <MainController.hpp>
 #include <spdlog/spdlog.h>
 

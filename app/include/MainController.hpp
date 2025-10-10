@@ -29,6 +29,22 @@ namespace app  {
 
 	class MainController : public engine::core::Controller {
 
+	    Light pointLight;
+	    Light dirLight;
+	    std::vector<Event> events;
+
+	    glm::vec3 birdPosition;
+	    float birdRadius;
+	    float birdSpeed;
+	    float birdAngle;
+	    float birdHeight;
+	    bool birdFlying;
+
+	    bool catVisible;
+	    bool dogVisible;
+
+	    bool cPressedLastFrame;
+
         void initialize() override;
 
         bool loop() override;
@@ -41,15 +57,15 @@ namespace app  {
 
 	    void update() override;
 
-	    static void drawCar();
+	    void drawCar();
 
-	    static void drawHouse();
+	    void drawHouse();
 
-	    static void drawBird();
+	    void drawBird();
 
-	    static void drawDog();
+	    void drawDog();
 
-	    static void drawCat();
+	    void drawCat();
 
 	    void begin_draw() override;
 
